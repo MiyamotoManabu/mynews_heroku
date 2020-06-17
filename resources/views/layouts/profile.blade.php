@@ -32,7 +32,7 @@ profile.blade.php を同じディレクトリ（resources/views/layouts）に作
 {{-- 次の1行を追記 --}}
 <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">-->
         <!-- <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet"> -->
-        <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
