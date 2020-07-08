@@ -38,10 +38,10 @@ titleとcontentを編集しましょう。（ヒント: resources/views/admin/ne
                     <div class="form-group row">
                         <label class="col-md-2">性別</label>
                         <div class="col-md-10">
-                            <input type="radio" class="form-control" name="gender" value="{{ old('title') }}">男性
-                            <input type="radio" class="form-control" name="gender" value="{{ old('title') }}">女性
-                        </div>
-                    </div>
+                            <input name="gender" type="radio" value="男性">男性<br />
+　　　　　　　　　　　　　　<input name="gender" type="radio" value="女性">女性
+　　　　　　　　　　　　</div>
+                　　</div>
                     <div class="form-group row">
                         <label class="col-md-2">趣味</label>
                         <div class="col-md-10">
