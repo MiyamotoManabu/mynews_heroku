@@ -7,8 +7,7 @@
         
         <!-- CSRF Token -->
          {{-- 後の章で説明します --}}
-        <meta name="csrf-token" content="
-        {{ csrf_token() }}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         
          {{-- 各ページごとにtitleタグを入れるために@yieldで空けておきます。 --}}
         <title>@yield('title')</title>
@@ -32,7 +31,6 @@ profile.blade.php を同じディレクトリ（resources/views/layouts）に作
 {{-- 次の1行を追記 --}}
 <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">-->
         <!-- <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet"> -->
-        <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
