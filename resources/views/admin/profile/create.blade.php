@@ -31,17 +31,29 @@ titleとcontentを編集しましょう。（ヒント: resources/views/admin/ne
                     @endif
                     <div class="form-group row">
                         <label class="col-md-2">氏名</label>
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             <input type="text" class="form-control" name="name" value="{{ old('title') }}">
+                        </div>
+                        <div class="col-md-5">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">性別</label>
                         <div class="col-md-10">
-                            <input name="gender" type="radio" value="男性">男性<br />
-　　　　　　　　　　　　　　<input name="gender" type="radio" value="女性">女性
-　　　　　　　　　　　　</div>
-                　　</div>
+                            <div class="form-check form-check-inline">
+                              <!--<input class="form-check-input" type="radio" name="gender" id="radio1a" value="male" {{ old('gender', 'male') == 'male' ? 'checked' : '' }} >-->
+                              <!--<input class="form-check-input" type="radio" name="gender" id="radio1a" value="male" checked >-->
+                              <input class="form-check-input" type="radio" name="gender" id="radio1a" value="{{ old('gender', 'male') }}" checked >
+                              <label class="form-check-label" for="radio1a">男性</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <!--<input class="form-check-input" type="radio" name="gender" id="radio1b" value="female" {{ old('gender', 'female') == 'female' ? 'checked' : '' }} >-->
+                              <input class="form-check-input" type="radio" name="gender" id="radio1b" value="{{ old('gender', 'female') }}" >
+                              <label class="form-check-label" for="radio1b">女性</label>
+                            </div>
+                        </div>
+                       
+                    </div>
                     <div class="form-group row">
                         <label class="col-md-2">趣味</label>
                         <div class="col-md-10">
