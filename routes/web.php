@@ -16,26 +16,19 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-Route::get('news/create', 'Admin\NewsController@add');
-Route::post('news/create', 'Admin\NewsController@create'); # 追記
-/*Laravel013課題3【応用】 routes/web.php を編集して、 admin/profile/create に postメソッドでアクセスしたら
-ProfileController の create Action に割り当てるように設定してください。*/
-Route::post('profile/create', 'Admin\ProfileController@create'); 
-/*Laravel013課題6【応用】 routes/web.php を編集して、 admin/profile/edit に postメソッドでアクセスしたら 
-ProfileController の update Action に割り当てるように設定してください。*/
-Route::post('profile/edit', 'Admin\ProfileController@update');
-    /*課題４【応用】 前章でAdmin/ProfileControllerを作成し、add Action, edit Actionを追加しました。
-    web.phpを編集して、admin/profile/create にアクセスしたら ProfileController の add Action に、
-    admin/profile/edit にアクセスしたら ProfileController の edit Action に割り当てるように設定してください。*/
-    
-    /*Laravel12 課題２【応用】11章で /admin/profile/create にアクセスしたら ProfileController の add Action に
-    割り当てるように設定しました。 ログインしていない状態で /admin/profile/create にアクセス
-    した場合にログイン画面にリダイレクトされるように設定しましょう。*/
-    Route::get('profile/create', 'Admin\ProfileController@add')->middleware('auth');
-    /*Laravel12 課題3【応用】11章で /admin/profile/edit にアクセスしたら ProfileController の edit Action に
-    割り当てるように設定しました。 ログインしていない状態で /admin/profile/edit にアクセス
-    した場合にログイン画面にリダイレクトされるように設定しましょう。*/
-    Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
+    Route::get('news/create', 'Admin\NewsController@add');
+    Route::post('news/create', 'Admin\NewsController@create'); 
+    Route::get('news', 'Admin\NewsController@index');
+    Route::get('news/edit', 'Admin\NewsController@edit');
+    Route::post('news/edit', 'Admin\NewsController@update');
+    Route::get('news/delete', 'Admin\NewsController@delete');
+    //
+    Route::get('profile/create', 'Admin\ProfileController@add');
+    Route::post('profile/create', 'Admin\ProfileController@create'); 
+    Route::get('profile', 'Admin\ProfileController@index');
+    Route::get('profile/edit', 'Admin\ProfileController@edit');
+    Route::post('profile/edit', 'Admin\ProfileController@update');
+    Route::get('profile/delete', 'Admin\ProfileController@delete');
 });
 
 
